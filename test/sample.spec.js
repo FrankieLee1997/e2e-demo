@@ -40,7 +40,7 @@ describe('add todo', function () {
     let todoList = await page.$eval('#todo-list', el=> el.innerText);
     let todoCount = await page.waitFor('#todo-count');
     const count = await page.evaluate(todoCount => todoCount.querySelector('strong').textContent, todoCount);
-    expect(0).to.eql(+count);
+    expect(count).to.eql('0');
     expect(todoList).to.eql('playing basketball');
   })
 
